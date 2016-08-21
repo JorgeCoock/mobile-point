@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollViewForm"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:id="@+id/TextViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/feedbacktitle"
+        android:textSize="12pt"
+        android:layout_weight="0.10"
+        android:gravity="center_vertical|center_horizontal">
+    </TextView>
+
+    <EditText
+        android:id="@+id/Password"
+        android:layout_height="wrap_content"
+        android:hint="@string/userpwd"
+        android:inputType="textPersonName"
+        android:layout_width="fill_parent"
+        android:gravity="center_horizontal"
+        android:password="true">
+    </EditText>
+
+    <EditText
+        android:id="@+id/PasswordVerification"
+        android:layout_height="wrap_content"
+        android:hint="@string/userpwdver"
+        android:inputType="textPersonName"
+        android:layout_width="fill_parent"
+        android:gravity="center_horizontal"
+        android:password="true">
+    </EditText>
+
+    <Button
+        android:id="@+id/ButtonSendPassword"
+        android:layout_height="wrap_content"
+        android:text="@string/sendpwd"
+        android:onClick="sendPassword"
+        android:layout_width="fill_parent">
+    </Button>
+
+
+</LinearLayout>
+

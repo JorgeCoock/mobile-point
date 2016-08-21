@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">MobilePoint</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="feedbacktitle">Introduzca contraseña para el administrador</string>
+    <string name="userpwd">Contraseña</string>
+    <string name="userpwdver">Vuelva a escribir su contraseña</string>
+    <string name="sendpwd">Registrar constreña</string>
+    <string name="list_tittle">Registre las direcciones a las que desea acceder</string>
+    <string name="directionurl">Introduzca su dirección</string>
+    <string name="saveDirection">Guardar direccion url</string>
+    <string name="http">http://</string>
+    <string name="welcome">Bienvenido!</string>
+    <string name="userAdmin">Introduzca su contraseña </string>
+    <string name="login">Login</string>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+    <!--
+    -->
+    <string name="userLogin"> User Login</string>
+
+</resources>

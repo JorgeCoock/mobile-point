@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="rubixware.com.mobilepoint" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        >
+
+        <!-- Vista de las paginas -->
+        <activity
+            android:name=".PointPage"
+            android:label="@string/app_name"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            >
+
+
+
+
+        </activity>
+
+
+        <!-- Vista del formulario inicial -->
+
+        <activity
+            android:name=".FormPage"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            >
+
+        </activity>
+
+
+
+        <!-- Vista del llenado de paginas -->
+        <activity
+            android:name=".ListPage"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            >
+
+        </activity>
+
+
+        <activity
+            android:name=".WelcomePage"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+
+
+        <activity
+            android:name=".LoginPage"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            >
+
+        </activity>
+
+
+
+
+
+
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="true" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+
+</manifest>

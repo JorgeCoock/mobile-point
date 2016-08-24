@@ -3,7 +3,7 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="feedbacktitle">Introduzca contraseña para el administrador</string>
+    <string name="feedbacktitle">Nuevo administrador</string>
     <string name="userpwd">Contraseña</string>
     <string name="userpwdver">Vuelva a escribir su contraseña</string>
     <string name="sendpwd">Registrar constreña</string>

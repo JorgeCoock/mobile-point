@@ -6,8 +6,10 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Timer;
 
 public class WelcomePage extends Activity {
@@ -18,6 +20,16 @@ public class WelcomePage extends Activity {
         setContentView(R.layout.welcome_page);
         boolean file = checkPasswordFile("etc");
         startTimer(file);
+        DataBaseHelper mDatabaseHelper = new DataBaseHelper(this, null, null, 1);
+        ArrayList<Admin> admin_list =  mDatabaseHelper.getAdminIndex();
+        Log.e("TAG","000");
+        System.out.println("/////////////////////////////////");
+        if (admin_list.isEmpty()){
+            System.out.println("Esta vacia :( eeeee uwu");
+        }else{
+            System.out.println("ño");
+        }
+        System.out.println(admin_list);
 
     }
 

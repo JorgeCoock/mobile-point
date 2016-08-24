@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 
+import java.util.ArrayList;
+
 
 /**
  * Created by jorge on 21/08/16.
@@ -78,6 +80,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         return admin;
     }
 
+
     public boolean deleteAdmin(String adminName) {
 
         boolean result = false;
@@ -99,6 +102,33 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         }
         db.close();
         return result;
+    }
+
+    // Generic method for all classes
+    public ArrayList<Admin> getAdminIndex(){
+
+        ArrayList<Admin> adminList = new ArrayList<Admin>();
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        try{
+            Cursor cursor = db.rawQuery("Select * FROM "+TABLE_ADMINS, null);
+            try{
+                if (cursor.moveToFirst()){
+                    do {
+                        Admin admin = new Admin();
+                        admin.setId(Integer.parseInt(cursor.getString(0)));
+                        adminList.add(admin);
+                    }while (cursor.moveToNext());
+
+                }
+            } finally {
+                try { cursor.close();} catch (Exception ignore) {}
+            }
+        } finally {
+            try{ db.close(); } catch (Exception ignore) {}
+        }
+        return adminList;
     }
 
 

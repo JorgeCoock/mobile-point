@@ -5,10 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.os.Handler;
-import android.util.Log;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -40,7 +37,7 @@ public class WelcomePage extends Activity {
             @Override
             public void run() {
                 if (option){
-                    startActivity(new Intent(WelcomePage.this, FormPage.class));
+                    startActivity(new Intent(WelcomePage.this, AdminFormPage.class));
                 }else{
                     startActivity(new Intent(WelcomePage.this, PointPage.class));
                 }

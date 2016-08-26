@@ -25,7 +25,7 @@
         <!-- Vista del formulario inicial -->
 
         <activity
-            android:name=".FormPage"
+            android:name=".AdminFormPage"
             android:configChanges="orientation|keyboardHidden|screenSize"
             >
 

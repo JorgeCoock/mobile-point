@@ -19,9 +19,12 @@
     </TextView>
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText" />
+        android:hint = "@string/username"
+        android:gravity="center_horizontal"
+        android:inputType="textPersonName"
+        android:id="@+id/username" />
 
     <EditText
         android:id="@+id/Password"
@@ -46,8 +49,8 @@
     <Button
         android:id="@+id/ButtonSendPassword"
         android:layout_height="wrap_content"
-        android:text="@string/sendpwd"
-        android:onClick="sendPassword"
+        android:text="@string/save_admin"
+        android:onClick="saveAdmin"
         android:layout_width="fill_parent">
     </Button>
 

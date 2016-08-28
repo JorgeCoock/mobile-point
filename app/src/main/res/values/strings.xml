@@ -16,6 +16,9 @@
     <string name="login">Login</string>
     <string name="save_admin">Guardar Administrador</string>
     <string name="username">Username</string>
+    <string name="account_type">¿Qué cuenta tienes?</string>
+    <string name="user">Usuario</string>
+    <string name="admin">Administrador</string>
 
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>

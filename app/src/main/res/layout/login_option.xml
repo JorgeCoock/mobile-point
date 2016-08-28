@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/account_type"
+            android:textSize="15pt"
+            android:id="@+id/textView4"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="58dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/user"
+            android:id="@+id/userLogin"
+            android:layout_marginTop="67dp"
+            android:layout_below="@+id/textView4"
+            android:layout_alignRight="@+id/textView4"
+            android:layout_alignEnd="@+id/textView4"
+            android:layout_alignLeft="@+id/textView4"
+            android:layout_alignStart="@+id/textView4"
+            android:onClick="goToUserLogin"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/admin"
+            android:id="@+id/adminLogin"
+            android:layout_below="@+id/userLogin"
+            android:layout_alignLeft="@+id/userLogin"
+            android:layout_alignStart="@+id/userLogin"
+            android:layout_marginTop="52dp"
+            android:layout_alignRight="@+id/userLogin"
+            android:layout_alignEnd="@+id/userLogin"
+            android:onClick="gotToAdminLogin"/>
+    </RelativeLayout>
+</LinearLayout>

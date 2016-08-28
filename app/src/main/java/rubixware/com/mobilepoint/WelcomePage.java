@@ -37,7 +37,7 @@ public class WelcomePage extends Activity {
                 if (option){
                     startActivity(new Intent(WelcomePage.this, AdminFormPage.class));
                 }else{
-                    startActivity(new Intent(WelcomePage.this, PointPage.class));
+                    startActivity(new Intent(WelcomePage.this, LoginOption.class));
                 }
             }
         }, 2000);

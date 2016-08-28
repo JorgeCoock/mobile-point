@@ -63,6 +63,14 @@
 
         </activity>
 
+        <activity
+            android:name="LoginOption"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+
+            >
+
+        </activity>
+
 
 
 

@@ -48,88 +48,9 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         onCreate(db);
     }
 
-    //Add Admins
-    public void createAdmin(Admin admin){
-        ContentValues values = new ContentValues();
-        values.put(COLUMN_USERNAME, admin.getUsername());
-        values.put(COLUMN_PASSWORD, admin.getPassword());
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.insert(TABLE_ADMINS, null, values);
-        db.close();
-    }
-
-    public Admin showAdmin(String adminName){
-        String query = "Select * FROM " + TABLE_ADMINS + " WHERE " + COLUMN_USERNAME + " =  \"" + adminName + "\"";
-
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        Cursor cursor = db.rawQuery(query, null);
-
-        Admin admin = new Admin();
-
-        if (cursor.moveToFirst()){
-            cursor.moveToFirst();
-            admin.setId(Integer.parseInt(cursor.getString(0)));
-            admin.setUsername(cursor.getString(1));
-            admin.setPassword(cursor.getString(2));
-            cursor.close();
-        }else {
-            admin = null;
-        }
-        db.close();
-        return admin;
-    }
 
 
-    public boolean deleteAdmin(String adminName) {
 
-        boolean result = false;
-
-        String query = "Select * FROM " + TABLE_ADMINS + " WHERE " + COLUMN_USERNAME + " =  \"" + adminName + "\"";
-
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        Cursor cursor = db.rawQuery(query, null);
-
-        Admin admin = new Admin();
-
-        if (cursor.moveToFirst()) {
-            admin.setId(Integer.parseInt(cursor.getString(0)));
-            db.delete(TABLE_ADMINS, COLUMN_ID + " = ?",
-                    new String[] { String.valueOf(admin.getId()) });
-            cursor.close();
-            result = true;
-        }
-        db.close();
-        return result;
-    }
-
-    // Generic method for all classes
-    public ArrayList<Admin> getAdminIndex(){
-
-        ArrayList<Admin> adminList = new ArrayList<Admin>();
-
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        try{
-            Cursor cursor = db.rawQuery("Select * FROM "+TABLE_ADMINS, null);
-            try{
-                if (cursor.moveToFirst()){
-                    do {
-                        Admin admin = new Admin();
-                        admin.setId(Integer.parseInt(cursor.getString(0)));
-                        adminList.add(admin);
-                    }while (cursor.moveToNext());
-
-                }
-            } finally {
-                try { cursor.close();} catch (Exception ignore) {}
-            }
-        } finally {
-            try{ db.close(); } catch (Exception ignore) {}
-        }
-        return adminList;
-    }
 
 
 }

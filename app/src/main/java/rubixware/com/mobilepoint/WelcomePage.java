@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Timer;
@@ -18,12 +19,9 @@ public class WelcomePage extends Activity {
         setContentView(R.layout.welcome_page);
 
         DataBaseHelper mDatabaseHelper = new DataBaseHelper(this, null, null, 1);
-
-        ArrayList<Admin> admin_list =  mDatabaseHelper.getAdminIndex();
-
+        AdminQueries adminQueries = new AdminQueries();
+        ArrayList<Admin> admin_list =  adminQueries.getAdminIndex(mDatabaseHelper);
         launchNextActivity(admin_list.isEmpty());
-
-
     }
 
     @Override

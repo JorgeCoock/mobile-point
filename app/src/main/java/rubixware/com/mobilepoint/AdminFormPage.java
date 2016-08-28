@@ -60,8 +60,9 @@ public class AdminFormPage extends Activity{
 
     private void newAdmin(String username, String password){
         DataBaseHelper dbHelper = new DataBaseHelper(this, null, null, 1);
+        AdminQueries adminQueries = new AdminQueries();
         Admin admin = new Admin(username, password);
-        dbHelper.createAdmin(admin);
+        adminQueries.createAdmin(admin, dbHelper);
         Toast.makeText(this, "Administrador creado!", Toast.LENGTH_SHORT).show();
     }
 

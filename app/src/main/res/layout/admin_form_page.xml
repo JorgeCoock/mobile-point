@@ -9,13 +9,22 @@
 
     <TextView
         android:id="@+id/TextViewTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/feedbacktitle"
         android:textSize="12pt"
         android:layout_weight="0.10"
-        android:gravity="center_vertical|center_horizontal">
+        android:gravity="center_vertical|center_horizontal"
+        android:textColor="#000000">
     </TextView>
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint = "@string/username"
+        android:gravity="center_horizontal"
+        android:inputType="textPersonName"
+        android:id="@+id/username" />
 
     <EditText
         android:id="@+id/Password"
@@ -40,8 +49,8 @@
     <Button
         android:id="@+id/ButtonSendPassword"
         android:layout_height="wrap_content"
-        android:text="@string/sendpwd"
-        android:onClick="sendPassword"
+        android:text="@string/save_admin"
+        android:onClick="saveAdmin"
         android:layout_width="fill_parent">
     </Button>
 

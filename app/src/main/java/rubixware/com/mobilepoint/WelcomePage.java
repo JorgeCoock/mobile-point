@@ -5,10 +5,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.os.Handler;
+import android.util.Log;
 
-import java.io.File;
+import java.util.ArrayList;
 import java.util.Timer;
+import java.util.TimerTask;
 
 public class WelcomePage extends Activity {
 
@@ -16,9 +17,11 @@ public class WelcomePage extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.welcome_page);
-        boolean file = checkPasswordFile("etc");
-        startTimer(file);
 
+        DataBaseHelper mDatabaseHelper = new DataBaseHelper(this, null, null, 1);
+        AdminQueries adminQueries = new AdminQueries();
+        ArrayList<Admin> admin_list =  adminQueries.getAdminIndex(mDatabaseHelper);
+        launchNextActivity(admin_list.isEmpty());
     }
 
     @Override
@@ -27,29 +30,19 @@ public class WelcomePage extends Activity {
     }
 
 
-    private void startTimer(boolean checkfile){
-        MyTimerTask myTask = new MyTimerTask(this,checkfile);
-        Timer myTimer = new Timer();
-        myTimer.schedule(myTask, 2666);
+    public void launchNextActivity(final boolean option){
+        new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                if (option){
+                    startActivity(new Intent(WelcomePage.this, AdminFormPage.class));
+                }else{
+                    startActivity(new Intent(WelcomePage.this, PointPage.class));
+                }
+            }
+        }, 2000);
+
     }
-
-    public void changeWelcomeLayout(boolean check){
-
-        if(check){Intent launchAct = new Intent(this,PointPage.class);
-            startActivity(launchAct);}
-        else{Intent launchAct = new Intent(this,FormPage.class);
-            startActivity(launchAct);}
-        finish();
-    }
-
-    private boolean checkPasswordFile(String filename){
-        File file = getBaseContext().getFileStreamPath(filename);
-
-        return file.exists();
-    }
-
-
-
 
 
 }

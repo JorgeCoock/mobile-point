@@ -1,15 +1,11 @@
 package rubixware.com.mobilepoint;
 
 import android.app.Activity;
-import android.app.Application;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.net.Uri;
-import android.nfc.Tag;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -19,11 +15,9 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.PermissionRequest;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -243,7 +237,7 @@ public class PointPage extends ActionBarActivity {
 
     //Metodo para cambiar de layout y actividad
     public void changeLayout() {
-        Intent intent = new Intent(this, LoginPage.class);
+        Intent intent = new Intent(this, AdminLogin.class);
         startActivity(intent);
     }
 

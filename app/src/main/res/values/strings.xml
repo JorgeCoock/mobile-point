@@ -19,6 +19,8 @@
     <string name="account_type">¿Qué cuenta tienes?</string>
     <string name="user">Usuario</string>
     <string name="admin">Administrador</string>
+    <string name="admin_login">Login de Administrador</string>
+    <string name="username_field">Nombre de usuario</string>
 
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>

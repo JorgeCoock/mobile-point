@@ -57,19 +57,26 @@
 
 
         <activity
-            android:name=".LoginPage"
+            android:name=".AdminLogin"
             android:configChanges="orientation|keyboardHidden|screenSize"
             >
 
         </activity>
 
         <activity
-            android:name="LoginOption"
+            android:name=".LoginOption"
             android:configChanges="orientation|keyboardHidden|screenSize"
 
             >
 
         </activity>
+
+        <activity
+            android:name=".AdminPanel"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            >
+        </activity>
+
 
 
 

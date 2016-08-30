@@ -2,6 +2,7 @@ package rubixware.com.mobilepoint;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
@@ -34,6 +35,15 @@ public class AdminLogin extends Activity {
         }
     }
 
+    private boolean fieldsFill(String usernameField, String passwordField){
+        if (usernameField().isEmpty() || passwordField().isEmpty()){
+            Toast.makeText(this, "Llene todos los campos", Toast.LENGTH_LONG).show();
+            return false;
+        }else{
+            return true;
+        }
+    }
+
     private void tryLogin(Admin admin, String password){
         if (admin == null){
             Toast.makeText(this, "Administrador no encontrado", Toast.LENGTH_SHORT).show();
@@ -44,18 +54,9 @@ public class AdminLogin extends Activity {
 
     private void login(String password, Admin admin){
         if (password.equals(admin.getPassword())){
-            Toast.makeText(this, "Pase usted", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(AdminLogin.this, AdminPanel.class));
         }else{
             Toast.makeText(this, "Las contraseña está equivocada", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    private boolean fieldsFill(String usernameField, String passwordField){
-        if (usernameField().isEmpty() || passwordField().isEmpty()){
-            Toast.makeText(this, "Llene todos los campos", Toast.LENGTH_LONG).show();
-            return false;
-        }else{
-            return true;
         }
     }
 

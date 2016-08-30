@@ -19,7 +19,7 @@
         android:id="@+id/textView3" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/username"
         android:layout_height="wrap_content"
         android:hint="@string/username_field"
         android:layout_width="fill_parent"
@@ -37,8 +37,8 @@
         android:gravity="center_horizontal"
         android:password="true"
         android:layout_above="@+id/loginButton"
-        android:layout_alignRight="@+id/editText"
-        android:layout_alignEnd="@+id/editText" />
+        android:layout_alignRight="@+id/username"
+        android:layout_alignEnd="@+id/username" />
 
     <Button
         android:id="@+id/loginButton"

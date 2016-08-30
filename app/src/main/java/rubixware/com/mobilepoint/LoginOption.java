@@ -1,6 +1,7 @@
 package rubixware.com.mobilepoint;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
@@ -27,6 +28,6 @@ public class LoginOption extends Activity{
     }
 
     public void gotToAdminLogin(View button){
-        Toast.makeText(this, "Admin login?", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(LoginOption.this, AdminLogin.class));
     }
 }

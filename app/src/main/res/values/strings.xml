@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">MobilePoint</string>
 
+    <string name="admins">Administradores</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="feedbacktitle">Nuevo administrador</string>
@@ -21,12 +22,19 @@
     <string name="admin">Administrador</string>
     <string name="admin_login">Login de Administrador</string>
     <string name="username_field">Nombre de usuario</string>
+    <string name="users">Usuarios</string>
+    <string name="which_admin_section">¿A cuál sección desea entrar?</string>
 
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
-
-    <!--
-    -->
     <string name="userLogin"> User Login</string>
+
+    <!-- Fa icons -->
+    <string name="fa_user_users">&#xf007; Usuarios</string>
+    <string name="fa_list_pages">&#xf03a; Páginas</string>
+    <string name="fa_user_secret_admins">&#xf21b; Administradores</string>
+
+    <!-- Fa icons -->
+
 
 </resources>

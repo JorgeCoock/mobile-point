@@ -5,46 +5,74 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#0a1d32"
+        android:clickable="false">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="User"
-            android:id="@+id/textView5"
-            android:layout_marginTop="54dp"
+            android:text="@string/which_admin_section"
+            android:id="@+id/textView8"
+            android:layout_marginTop="45dp"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:textColor="#bbbbbb"
+            android:textSize="25dp" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fa_user_users"
+            android:id="@+id/user_option_button"
+            android:layout_marginTop="70dp"
+            android:background="#303030"
+            android:textColor="#bbbbbb"
+            android:textAllCaps="false"
+            android:layout_below="@+id/textView8"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="startPanelUsers"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Button"
-            android:id="@+id/adminPanelUsers"
-            android:layout_below="@+id/textView5"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="73dp" />
+            android:text="@string/fa_list_pages"
+            android:id="@+id/page_option_button"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/user_option_button"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="#303030"
+            android:textAllCaps="false"
+            android:textColor="#bbbbbb"
+            android:onClick="startPanelPages"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Admin"
-            android:id="@+id/textView6"
-            android:layout_below="@+id/adminPanelUsers"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="64dp" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Button"
-            android:id="@+id/adminPanelAdmins"
-            android:layout_below="@+id/textView6"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="61dp"
-            android:onClick="openAdminPanelAdmins"
-            />
+            android:text="@string/fa_user_secret_admins"
+            android:id="@+id/admin_option_button"
+            android:background="#303030"
+            android:textColor="#bbbbbb"
+            android:textAllCaps="false"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/page_option_button"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="startPanelAdmins"/>
+
+
+
+
     </RelativeLayout>
 </LinearLayout>

@@ -38,22 +38,6 @@
             android:layout_alignParentEnd="true"
             android:onClick="startPanelUsers"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/fa_list_pages"
-            android:id="@+id/page_option_button"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/user_option_button"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:background="#303030"
-            android:textAllCaps="false"
-            android:textColor="#bbbbbb"
-            android:onClick="startPanelPages"/>
-
 
         <Button
             android:layout_width="wrap_content"
@@ -64,12 +48,12 @@
             android:textColor="#bbbbbb"
             android:textAllCaps="false"
             android:layout_marginTop="10dp"
-            android:layout_below="@+id/page_option_button"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:onClick="startPanelAdmins"/>
+            android:onClick="startPanelAdmins"
+            android:layout_below="@+id/user_option_button" />
 
 
 

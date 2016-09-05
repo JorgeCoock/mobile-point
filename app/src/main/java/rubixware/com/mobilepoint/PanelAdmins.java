@@ -7,9 +7,12 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -50,10 +53,17 @@ public class PanelAdmins extends Activity {
         return adminsArray;
     }
 
-    private void setAdminsOnListView(ArrayList<String> admins){
+    private void setAdminsOnListView(final ArrayList<String> admins){
         ArrayAdapter<String> adminAdapter = new ArrayAdapter<String>(this,
                 +android.R.layout.simple_list_item_1, android.R.id.text1, admins);
-        ListView listView = (ListView) findViewById(R.id.admin_collection);
+        final ListView listView = (ListView) findViewById(R.id.admin_collection);
         listView.setAdapter(adminAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+               String admin = (String) listView.getItemAtPosition(position);
+               Toast.makeText(PanelAdmins.this, "Admin: "+admin, Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }

@@ -22,7 +22,7 @@ public class PanelAdmins extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.panel_admins);
-        Typeface font = Typeface.createFromAsset( getAssets(), "fontawesome-webfont.ttf" );
+        Typeface font = Typeface.createFromAsset(getAssets(), "fontawesome-webfont.ttf");
         setFaIconsToButtons(font);
         ArrayList<String> admins = getAdminsUsernamesArrayList();
         setAdminsOnListView(admins);
@@ -61,11 +61,10 @@ public class PanelAdmins extends Activity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-           String admin = (String) listView.getItemAtPosition(position);
-           Toast.makeText(PanelAdmins.this, "Admin: "+admin, Toast.LENGTH_LONG).show();
-            startActivity(new Intent(PanelAdmins.this, AdminFormUpdate.class));
-
+                String adminUsername = (String) listView.getItemAtPosition(position);
+                Intent intent = new Intent(PanelAdmins.this, AdminFormUpdate.class);
+                intent.putExtra("getAdminUsername", adminUsername);
+                startActivity(intent);
             }
         });
     }

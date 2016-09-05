@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -13,7 +14,7 @@ import android.widget.TextView;
 public class AdminFormUpdate extends Activity {
 
     String adminUsername;
-    EditText usernameField;
+    EditText usernameField, passwordField, confirmPasswordField;
 
 
     @Override
@@ -26,6 +27,8 @@ public class AdminFormUpdate extends Activity {
         adminUsername = intent.getStringExtra("getAdminUsername");
         usernameField = (EditText) findViewById(R.id.editAdminUsername);
         usernameField.setText(adminUsername, TextView.BufferType.EDITABLE);
+        passwordField = (EditText) findViewById(R.id.editAdminPassword);
+        confirmPasswordField = (EditText) findViewById(R.id.editAdminPasswordConfirmation);
     }
 
     @Override
@@ -37,6 +40,27 @@ public class AdminFormUpdate extends Activity {
         Button create_admin_button = (Button)findViewById( R.id.deleteAdmin);
         create_admin_button.setTypeface(font);
     }
+
+    private String username(){
+        return usernameField.getText().toString();
+    }
+    private String password(){
+        return passwordField.getText().toString();
+    }
+
+    private String passwordConfirmation(){
+        return confirmPasswordField.getText().toString();
+    }
+
+
+    public void editAdmin(View view){
+        if (password().isEmpty() || passwordConfirmation().isEmpty() && !username().isEmpty()){
+
+        }
+
+    }
+
+
 
 
 

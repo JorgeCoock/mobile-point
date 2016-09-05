@@ -4,6 +4,9 @@ package rubixware.com.mobilepoint;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
+
+import java.io.Console;
 import java.util.ArrayList;
 
 public class AdminQueries{
@@ -65,7 +68,7 @@ public class AdminQueries{
         ArrayList<Admin> adminList = new ArrayList<Admin>();
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         try{
-            Cursor cursor = db.rawQuery("Select * FROM "+TABLE_ADMINS, null);
+            Cursor cursor = db.rawQuery("Select * FROM "+TABLE_ADMINS+ " ORDER BY username", null);
             try{
                 if (cursor.moveToFirst()){
                     do {
@@ -73,6 +76,28 @@ public class AdminQueries{
                         admin.setId(Integer.parseInt(cursor.getString(0)));
                         admin.setUsername(cursor.getString(1));
                         admin.setPassword(cursor.getString(2));
+                        adminList.add(admin);
+                    }while (cursor.moveToNext());
+                }
+            } finally {
+                try { cursor.close();} catch (Exception ignore) {}
+            }
+        } finally {
+            try{ db.close(); } catch (Exception ignore) {}
+        }
+        return adminList;
+    }
+
+    public ArrayList<Admin> getAdminUsernames(DataBaseHelper dbHelper){
+        ArrayList<Admin> adminList = new ArrayList<Admin>();
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        try{
+            Cursor cursor = db.rawQuery("Select username FROM "+TABLE_ADMINS+ " ORDER BY username", null);
+            try{
+                if (cursor.moveToFirst()){
+                    do {
+                        Admin admin = new Admin();
+                        admin.setUsername(cursor.getString(0));
                         adminList.add(admin);
                     }while (cursor.moveToNext());
                 }

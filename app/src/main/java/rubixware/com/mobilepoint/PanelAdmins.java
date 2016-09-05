@@ -21,9 +21,8 @@ public class PanelAdmins extends Activity {
         setContentView(R.layout.panel_admins);
         Typeface font = Typeface.createFromAsset( getAssets(), "fontawesome-webfont.ttf" );
         setFaIconsToButtons(font);
-        ArrayList<Admin> admins = getAdmins();
+        ArrayList<String> admins = getAdminsUsernamesArrayList();
         setAdminsOnListView(admins);
-
     }
 
     @Override
@@ -40,15 +39,19 @@ public class PanelAdmins extends Activity {
         startActivity(new Intent(PanelAdmins.this, AdminFormPage.class));
     }
 
-    public ArrayList<Admin> getAdmins(){
+    public ArrayList<String> getAdminsUsernamesArrayList(){
         DataBaseHelper dbHelper = new DataBaseHelper(this, null, null, 1);
         AdminQueries adminQueries = new AdminQueries();
-        return adminQueries.getAdminIndex(dbHelper);
-       // Log.e("ADMINS", " "+admin_list.get(0).getUsername());
+        ArrayList<Admin> adminUsernamesResponse = adminQueries.getAdminUsernames(dbHelper);
+        ArrayList<String> adminsArray = new ArrayList<>();
+        for (int i = 0; i < adminUsernamesResponse.size(); i++){
+            adminsArray.add(adminUsernamesResponse.get(i).getUsername());
+        }
+        return adminsArray;
     }
 
-    private void setAdminsOnListView(ArrayList<Admin> admins){
-        ArrayAdapter<Admin> adminAdapter = new ArrayAdapter<Admin>(this,
+    private void setAdminsOnListView(ArrayList<String> admins){
+        ArrayAdapter<String> adminAdapter = new ArrayAdapter<String>(this,
                 +android.R.layout.simple_list_item_1, android.R.id.text1, admins);
         ListView listView = (ListView) findViewById(R.id.admin_collection);
         listView.setAdapter(adminAdapter);

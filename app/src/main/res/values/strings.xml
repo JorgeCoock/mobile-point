@@ -23,6 +23,8 @@
     <string name="user">Usuario</string>
     <string name="admin">Administrador</string>
     <string name="admin_login">Login de Administrador</string>
+    <string name="update_admin">Editar Administrador</string>
+    <string name="update_admin_confirm_password">Vuelva a escribir la contraseña</string>
     <string name="username_field">Nombre de usuario</string>
     <string name="users">Usuarios</string>
     <string name="which_admin_section">¿A cuál sección desea entrar?</string>
@@ -37,6 +39,7 @@
     <string name="fa_list_pages">&#xf03a; Páginas</string>
     <string name="fa_plus_new_admin">&#xf067; Nuevo administrador</string>
     <string name="fa_user_secret_admins">&#xf21b; Administradores</string>
+    <string name="fa_times_delete_admin">&#xf00d; Borrar Administrador</string>
 
     <!-- Fa icons -->
 

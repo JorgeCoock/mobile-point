@@ -46,14 +46,14 @@ public class AdminQueries{
         return admin;
     }
 
-    public boolean updateAdmin(Admin admin, DataBaseHelper dbHelper){
+    public boolean updateAdmin(Admin admin, DataBaseHelper dbHelper, Admin newAdmin){
         boolean result = false;
         String query = "Select * FROM " + TABLE_ADMINS + " WHERE " + COLUMN_USERNAME + " =  \"" + admin.getUsername() + "\"";
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
         ContentValues values = new ContentValues();
-        values.put(COLUMN_USERNAME, admin.getUsername());
-        values.put(COLUMN_PASSWORD, admin.getPassword());
+        values.put(COLUMN_USERNAME, newAdmin.getUsername());
+        values.put(COLUMN_PASSWORD, newAdmin.getPassword());
         if (cursor.moveToFirst()){
             admin.setId(Integer.parseInt(cursor.getString(0)));
             db.update(TABLE_ADMINS, values, COLUMN_ID + "=" + admin.getId(), null);

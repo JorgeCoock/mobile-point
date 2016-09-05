@@ -61,8 +61,11 @@ public class PanelAdmins extends Activity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-               String admin = (String) listView.getItemAtPosition(position);
-               Toast.makeText(PanelAdmins.this, "Admin: "+admin, Toast.LENGTH_LONG).show();
+
+           String admin = (String) listView.getItemAtPosition(position);
+           Toast.makeText(PanelAdmins.this, "Admin: "+admin, Toast.LENGTH_LONG).show();
+            startActivity(new Intent(PanelAdmins.this, AdminFormUpdate.class));
+
             }
         });
     }

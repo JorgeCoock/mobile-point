@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
@@ -58,8 +59,7 @@ public class PanelAdmins extends Activity {
     }
 
     private void setAdminsOnListView(final ArrayList<String> admins){
-        adminAdapter = new ArrayAdapter<String>(this,
-                +android.R.layout.simple_list_item_1, android.R.id.text1, admins);
+        adminAdapter = new ArrayAdapter<String>(this, R.layout.custom_listview, android.R.id.text1, admins);
         final ListView listView = (ListView) findViewById(R.id.admin_collection);
         listView.setAdapter(adminAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

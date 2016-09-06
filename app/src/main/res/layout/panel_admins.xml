@@ -6,7 +6,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_horizontal"
+        android:background="#0a1d32">
 
         <TextView
             android:layout_width="wrap_content"
@@ -16,7 +17,8 @@
             android:id="@+id/textView7"
             android:layout_marginTop="35dp"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:textColor="#bbbbbb" />
 
         <Button
             android:layout_width="wrap_content"
@@ -27,7 +29,12 @@
             android:onClick="createAdmin"
             android:layout_marginBottom="25dp"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
+            android:background="#303030"
+            android:textColor="#bbbbbb"
+            android:layout_alignLeft="@+id/textView7"
+            android:layout_alignStart="@+id/textView7"
+            android:layout_alignRight="@+id/textView7"
+            android:layout_alignEnd="@+id/textView7" />
 
         <ListView
             android:layout_width="wrap_content"

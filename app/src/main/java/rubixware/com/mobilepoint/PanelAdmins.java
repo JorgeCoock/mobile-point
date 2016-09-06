@@ -1,6 +1,8 @@
 package rubixware.com.mobilepoint;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Typeface;
@@ -17,6 +19,10 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class PanelAdmins extends Activity {
+
+    DataBaseHelper dbHelper = new DataBaseHelper(this, null, null, 1);
+    AdminQueries adminQueries = new AdminQueries();
+    public ArrayAdapter<String> adminAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +49,6 @@ public class PanelAdmins extends Activity {
     }
 
     public ArrayList<String> getAdminsUsernamesArrayList(){
-        DataBaseHelper dbHelper = new DataBaseHelper(this, null, null, 1);
-        AdminQueries adminQueries = new AdminQueries();
         ArrayList<Admin> adminUsernamesResponse = adminQueries.getAdminUsernames(dbHelper);
         ArrayList<String> adminsArray = new ArrayList<>();
         for (int i = 0; i < adminUsernamesResponse.size(); i++){
@@ -54,7 +58,7 @@ public class PanelAdmins extends Activity {
     }
 
     private void setAdminsOnListView(final ArrayList<String> admins){
-        ArrayAdapter<String> adminAdapter = new ArrayAdapter<String>(this,
+        adminAdapter = new ArrayAdapter<String>(this,
                 +android.R.layout.simple_list_item_1, android.R.id.text1, admins);
         final ListView listView = (ListView) findViewById(R.id.admin_collection);
         listView.setAdapter(adminAdapter);
@@ -62,10 +66,38 @@ public class PanelAdmins extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String adminUsername = (String) listView.getItemAtPosition(position);
-                Intent intent = new Intent(PanelAdmins.this, AdminFormUpdate.class);
-                intent.putExtra("getAdminUsername", adminUsername);
-                startActivity(intent);
+                deleteAdminAlert(adminUsername, position);
             }
         });
+    }
+
+    private void deleteAdminAlert(final String adminUsername, final Integer position){
+        AlertDialog.Builder adminDelete = new AlertDialog.Builder(this);
+        adminDelete.setTitle("Eliminar Administrador")
+            .setMessage("Seguro que desea eliminar al administrador: "+adminUsername+" ?")
+            .setCancelable(false)
+            .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                })
+            .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    deleteAdmin(adminUsername, position);
+                }
+            });
+        adminDelete.create();
+        adminDelete.show();
+    }
+
+    private void deleteAdmin(String adminUsername, Integer position){
+        if(adminQueries.deleteAdmin(adminUsername, dbHelper)){
+            Toast.makeText(this, "Se ha eliminado al admin: "+adminUsername, Toast.LENGTH_LONG).show();
+            adminAdapter.remove(adminAdapter.getItem(position));
+            adminAdapter.notifyDataSetChanged();
+        }else{
+            Toast.makeText(this, "NO se pudo eliminar al admin", Toast.LENGTH_LONG).show();
+        }
     }
 }

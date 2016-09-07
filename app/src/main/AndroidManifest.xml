@@ -77,6 +77,18 @@
             >
         </activity>
 
+        <activity
+            android:name=".PanelAdmins"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            >
+        </activity>
+
+        <activity
+            android:name=".AdminFormUpdate"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            >
+        </activity>
+
 
 
 

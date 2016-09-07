@@ -27,7 +27,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     public static final String COLUMN_PASSWORD = "password";
     public static final String CREATE_ADMIN_TABLE = "CREATE TABLE "
             + TABLE_ADMINS + "(" + COLUMN_ID + " INTEGER PRIMARY KEY, "
-            + COLUMN_USERNAME + " TEXT, " + COLUMN_PASSWORD + " TEXT)";
+            + COLUMN_USERNAME + " TEXT, " + COLUMN_PASSWORD + " TEXT, UNIQUE ("+COLUMN_USERNAME+"))";
 
 
 

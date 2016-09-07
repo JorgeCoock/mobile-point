@@ -36,17 +36,27 @@ public class PanelAdmins extends Activity {
     }
 
     @Override
+    protected void onResume(){
+        super.onResume();
+        adminAdapter.notifyDataSetChanged();
+    }
+
+    @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
     }
 
     private void setFaIconsToButtons(Typeface font){
         Button create_admin_button = (Button)findViewById( R.id.create_admin_button);
+        Button goBack = (Button) findViewById(R.id.goBack);
         create_admin_button.setTypeface(font);
+        goBack.setTypeface(font);
     }
 
     public void createAdmin(View view){
-        startActivity(new Intent(PanelAdmins.this, AdminFormPage.class));
+        Intent intent = new Intent(PanelAdmins.this, AdminFormPage.class);
+        intent.putExtra("where", "PanelAdmins");
+        startActivity(intent);
     }
 
     public ArrayList<String> getAdminsUsernamesArrayList(){
@@ -99,5 +109,10 @@ public class PanelAdmins extends Activity {
         }else{
             Toast.makeText(this, "NO se pudo eliminar al admin", Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void goBack(View view){
+        startActivity(new Intent(PanelAdmins.this, AdminPanel.class));
+        finish();
     }
 }

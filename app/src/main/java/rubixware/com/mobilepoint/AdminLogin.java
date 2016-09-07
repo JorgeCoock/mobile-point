@@ -55,6 +55,7 @@ public class AdminLogin extends Activity {
     private void login(String password, Admin admin){
         if (password.equals(admin.getPassword())){
             startActivity(new Intent(AdminLogin.this, AdminPanel.class));
+            finish();
         }else{
             Toast.makeText(this, "Las contraseña está equivocada", Toast.LENGTH_SHORT).show();
         }

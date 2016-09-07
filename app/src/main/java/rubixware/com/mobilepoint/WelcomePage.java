@@ -35,7 +35,9 @@ public class WelcomePage extends Activity {
             @Override
             public void run() {
                 if (option){
-                    startActivity(new Intent(WelcomePage.this, AdminFormPage.class));
+                    Intent intent = new Intent(WelcomePage.this, AdminFormPage.class);
+                    intent.putExtra("where", "WelcomePage");
+                    startActivity(intent);
                 }else{
                     startActivity(new Intent(WelcomePage.this, LoginOption.class));
                 }

@@ -11,10 +11,15 @@ import android.widget.Toast;
 
 public class AdminFormPage extends Activity{
 
+    Intent myIntent;
+    String where;
+
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.admin_form_page);
+        myIntent = getIntent();
+        where = myIntent.getStringExtra("where");
     }
 
     @Override
@@ -51,7 +56,12 @@ public class AdminFormPage extends Activity{
         }else{
             if (password.equals(passwordConfirmation)){
                 newAdmin(username, password);
-                startActivity(new Intent(AdminFormPage.this, PointPage.class));
+                if (where.equals("PanelAdmins")){
+                    startActivity(new Intent(AdminFormPage.this, PanelAdmins.class));
+                }else{
+                    startActivity(new Intent(AdminFormPage.this, AdminPanel.class));
+                }
+                finish();
             }else{
                 Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
             }

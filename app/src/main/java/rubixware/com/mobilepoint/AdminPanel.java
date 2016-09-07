@@ -26,8 +26,10 @@ public class AdminPanel extends Activity {
     private void setFaIconsToButtons(Typeface font){
         Button user_option_button = (Button)findViewById( R.id.user_option_button);
         Button admin_option_button = (Button)findViewById(R.id.admin_option_button);
+        Button goBack = (Button) findViewById(R.id.goBack);
         user_option_button.setTypeface(font);
         admin_option_button.setTypeface(font);
+        goBack.setTypeface(font);
     }
 
     public void startPanelUsers(View button){
@@ -36,6 +38,11 @@ public class AdminPanel extends Activity {
 
     public void startPanelAdmins(View button){
         startActivity(new Intent(AdminPanel.this, PanelAdmins.class));
+    }
+
+    public void goBack(View view){
+        startActivity(new Intent(AdminPanel.this, LoginOption.class));
+        finish();
     }
 
 }

@@ -3,8 +3,10 @@ package rubixware.com.mobilepoint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 /**
@@ -15,6 +17,8 @@ public class LoginOption extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_option);
+        Typeface font = Typeface.createFromAsset(getAssets(), "fontawesome-webfont.ttf");
+        setFaIconsToButtons(font);
 
     }
 
@@ -29,5 +33,12 @@ public class LoginOption extends Activity{
 
     public void gotToAdminLogin(View button){
         startActivity(new Intent(LoginOption.this, AdminLogin.class));
+    }
+
+    private void setFaIconsToButtons(Typeface font){
+        Button userLogin = (Button)findViewById( R.id.userLogin);
+        Button adminLogin = (Button) findViewById(R.id.adminLogin);
+        userLogin.setTypeface(font);
+        adminLogin.setTypeface(font);
     }
 }

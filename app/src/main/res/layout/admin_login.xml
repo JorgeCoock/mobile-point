@@ -31,7 +31,7 @@
         android:textColor="#bbbbbb"
         android:textColorHint="#bbbbbb"
         android:textColorLink="#bbbbbb"
-        android:textIsSelectable="true"
+        android:textIsSelectable="false"
         android:autoText="false"
         android:backgroundTint="#bbbbbb" />
 
@@ -60,6 +60,7 @@
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:textAllCaps="false"
         android:textColor="#bbbbbb"
         android:background="#303030" />
 

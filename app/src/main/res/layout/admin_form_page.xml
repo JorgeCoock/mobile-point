@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/scrollViewForm"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:background="#0a1d32">
 
     <TextView
         android:id="@+id/TextViewTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/feedbacktitle"
-        android:textSize="12pt"
+        android:textSize="15pt"
         android:layout_weight="0.10"
         android:gravity="center_vertical|center_horizontal"
-        android:textColor="#000000">
+        android:textColor="#bbbbbb"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp">
     </TextView>
 
     <EditText
@@ -24,7 +29,14 @@
         android:hint = "@string/username"
         android:gravity="center_horizontal"
         android:inputType="textPersonName"
-        android:id="@+id/username" />
+        android:id="@+id/username"
+        android:backgroundTint="#bbbbbb"
+        android:textColorHint="#bbbbbb"
+        android:textColor="#bbbbbb"
+        android:layout_marginTop="34dp"
+        android:layout_below="@+id/TextViewTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:id="@+id/Password"
@@ -33,7 +45,13 @@
         android:inputType="textPersonName"
         android:layout_width="fill_parent"
         android:gravity="center_horizontal"
-        android:password="true">
+        android:password="true"
+        android:textColor="#bbbbbb"
+        android:textColorHint="#bbbbbb"
+        android:backgroundTint="#bbbbbb"
+        android:layout_below="@+id/username"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
     </EditText>
 
     <EditText
@@ -43,7 +61,13 @@
         android:inputType="textPersonName"
         android:layout_width="fill_parent"
         android:gravity="center_horizontal"
-        android:password="true">
+        android:password="true"
+        android:textColorHint="#bbbbbb"
+        android:backgroundTint="#bbbbbb"
+        android:layout_below="@+id/Password"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#bbbbbb">
     </EditText>
 
     <Button
@@ -51,9 +75,15 @@
         android:layout_height="wrap_content"
         android:text="@string/save_admin"
         android:onClick="saveAdmin"
-        android:layout_width="fill_parent">
+        android:layout_width="fill_parent"
+        android:textColor="#bbbbbb"
+        android:textAllCaps="false"
+        android:background="#303030"
+        android:layout_below="@+id/PasswordVerification"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
     </Button>
 
 
-</LinearLayout>
+</RelativeLayout>
 

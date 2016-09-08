@@ -68,7 +68,7 @@
             android:id="@+id/save_user"
             android:layout_height="wrap_content"
             android:text="@string/save_user"
-            android:onClick="saveAdmin"
+            android:onClick="saveUser"
             android:layout_width="fill_parent"
             android:textColor="#bbbbbb"
             android:textAllCaps="false"

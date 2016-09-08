@@ -23,4 +23,23 @@ public class Page {
         db.close();
     }
 
+    public Pages showPages(String adminName, DataBaseHelper dbHelper){
+        String query = "Select * FROM " + TABLE_PAGES + " WHERE " + COLUMN_PAGES_USERNAME + " =  \"" + adminName + "\"";
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        Admin admin = new Admin();
+
+        if (cursor.moveToFirst()){
+            cursor.moveToFirst();
+            pages.setId(Integer.parseInt(cursor.getString(0)));
+            pages.setUsername(cursor.getString(1));
+            pages.setPassword(cursor.getString(2));
+            cursor.close();
+        }else {
+            pages = null;
+        }
+        db.close();
+        return pages;
+    }
+
 }

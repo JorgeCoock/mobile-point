@@ -33,6 +33,7 @@ public class AdminPanel extends Activity {
     }
 
     public void startPanelUsers(View button){
+        startActivity(new Intent(AdminPanel.this, PanelUsers.class));
     }
 
 

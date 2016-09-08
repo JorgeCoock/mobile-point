@@ -14,7 +14,7 @@ public class Page {
 
     public AdminQueries() {
     }
-    //Add Admins
+    //Add Pages
     public void createPages(Pages admin, DataBaseHelper dbHelper){
         ContentValues values = new ContentValues();
         values.put(COLUMN_PAGES_USERNAME, pages.getUsername());
@@ -22,4 +22,23 @@ public class Page {
         db.insert(TABLE_PAGES, null, values);
         db.close();
     }
+    public Pages showPages(String adminName, DataBaseHelper dbHelper){
+        String query = "Select * FROM " + TABLE_PAGES + " WHERE " + COLUMN_PAGES_USERNAME + " =  \"" + pagesName + "\"";
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        Admin admin = new Admin();
+
+        if (cursor.moveToFirst()){
+            cursor.moveToFirst();
+            pages.setId(Integer.parseInt(cursor.getString(0)));
+            pages.setUsername(cursor.getString(1));
+            pages.setPassword(cursor.getString(2));
+            cursor.close();
+        }else {
+            pages = null;
+        }
+        db.close();
+        return pages;
+    }
+
 }

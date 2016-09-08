@@ -17,7 +17,7 @@ public class Page {
     //Add Admins
     public void createPages(Pages admin, DataBaseHelper dbHelper){
         ContentValues values = new ContentValues();
-        values.put(COLUMN_PAGES_USERNAME, admin.getUsername());
+        values.put(COLUMN_PAGES_USERNAME, pages.getUsername());
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         db.insert(TABLE_PAGES, null, values);
         db.close();

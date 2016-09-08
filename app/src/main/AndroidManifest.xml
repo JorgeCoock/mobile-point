@@ -89,6 +89,12 @@
             >
         </activity>
 
+        <activity
+            android:name=".PanelUsers"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            >
+        </activity>
+
 
 
 

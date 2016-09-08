@@ -27,6 +27,7 @@
     <string name="update_admin_confirm_password">Vuelva a escribir la contraseña</string>
     <string name="username_field">Nombre de usuario</string>
     <string name="users">Usuarios</string>
+    <string name="users_administration">Administración de Usuarios</string>
     <string name="which_admin_section">¿A cuál sección desea entrar?</string>
 
 

@@ -40,6 +40,7 @@
     <!-- Fa icons -->
     <string name="fa_chevron">&#xf053;</string>
     <string name="fa_user_users">&#xf007; Usuarios</string>
+    <string name="fa_user_users_edit">&#xf007; Editar usuario</string>
     <string name="fa_user_user">&#xf007; Usuario</string>
     <string name="fa_list_pages">&#xf03a; Páginas</string>
     <string name="fa_plus_new_admin">&#xf067; Nuevo</string>

@@ -107,6 +107,12 @@
             >
         </activity>
 
+        <activity
+            android:name=".UserFormPageUpdate"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            >
+        </activity>
+
 
 
 

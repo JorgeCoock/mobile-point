@@ -30,7 +30,7 @@
             android:background="#303030"
             android:textColor="#bbbbbb"
             android:textAllCaps="false"
-            android:onClick="startPanelUsers"
+            android:onClick="editUser"
             android:layout_below="@+id/edit_user_title"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"

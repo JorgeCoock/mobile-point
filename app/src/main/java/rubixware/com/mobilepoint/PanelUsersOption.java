@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -38,6 +39,12 @@ public class PanelUsersOption extends Activity{
         Button editPages = (Button) findViewById(R.id.edit_pages);
         editUser.setTypeface(font);
         editPages.setTypeface(font);
+    }
+
+    public void editUser(View view){
+        Intent intent = new Intent(PanelUsersOption.this, UserFormPageUpdate.class);
+        intent.putExtra("username", username);
+        startActivity(intent);
     }
 
 }

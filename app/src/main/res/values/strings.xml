@@ -32,6 +32,8 @@
     <string name="which_admin_section">¿A cuál sección desea entrar?</string>
     <string name="new_user">Nuevo Usuario</string>
 
+    <string name="user_edit">Editar usuario</string>
+
 
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>

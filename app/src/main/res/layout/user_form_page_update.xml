@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:background="#0a1d32">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/user_edit"
+            android:textSize="15pt"
+            android:layout_weight="0.10"
+            android:gravity="center_vertical|center_horizontal"
+            android:textColor="#bbbbbb"
+            android:layout_marginTop="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/username"
+            android:gravity="center_horizontal"
+            android:inputType="textPersonName"
+            android:id="@+id/username"
+            android:backgroundTint="#bbbbbb"
+            android:textColorHint="#bbbbbb"
+            android:textColor="#bbbbbb"
+            android:layout_marginTop="34dp"
+            android:layout_below="@+id/textView9"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_height="wrap_content"
+            android:hint="@string/userpwd"
+            android:inputType="textPersonName"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal"
+            android:password="true"
+            android:textColor="#bbbbbb"
+            android:textColorHint="#bbbbbb"
+            android:backgroundTint="#bbbbbb"
+            android:layout_below="@+id/username"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:id="@+id/password_confirmation"
+            android:layout_height="wrap_content"
+            android:hint="@string/userpwdver"
+            android:inputType="textPersonName"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal"
+            android:password="true"
+            android:textColorHint="#bbbbbb"
+            android:backgroundTint="#bbbbbb"
+            android:textColor="#bbbbbb"
+            android:layout_below="@+id/password"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/save_user"
+            android:layout_height="wrap_content"
+            android:text="@string/save_user"
+            android:onClick="updateUser"
+            android:layout_width="fill_parent"
+            android:textColor="#bbbbbb"
+            android:textAllCaps="false"
+            android:background="#303030"
+            android:layout_below="@+id/password_confirmation"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fa_chevron"
+            android:id="@+id/goBack"
+            android:onClick="goBack"
+            android:layout_marginBottom="44dp"
+            android:layout_marginLeft="3dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="#303030"
+            android:textColor="#bbbbbb" />
+    </RelativeLayout>
+
+</LinearLayout>
+

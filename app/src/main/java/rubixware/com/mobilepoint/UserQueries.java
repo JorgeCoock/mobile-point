@@ -43,6 +43,24 @@ public class UserQueries {
         db.close();
         return user;
     }
+    public boolean updateAdmin(User user, DataBaseHelper dbHelper, User newUser){
+        boolean result = false;
+        String query = "Select * FROM " + TABLE_USERS + " WHERE " + COLUMN_USERS_USERNAME + " =  \"" + user.getUsername() + "\"";
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_USERS_USERNAME, newUser.getUsername());
+        values.put(COLUMN_USERS_PASSWORD, newUser.getPassword());
+        if (cursor.moveToFirst()){
+            user.setId(Integer.parseInt(cursor.getString(0)));
+            db.update(TABLE_USERS, values, COLUMN_USERS_ID + "=" + user.getId(), null);
+            cursor.close();
+            result = true;
+        }
+        db.close();
+        return result;
+    }
+
 
     public boolean deleteUser(String username, DataBaseHelper dbHelper){
         boolean result = false;

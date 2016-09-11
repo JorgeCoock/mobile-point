@@ -32,6 +32,8 @@
     <string name="which_admin_section">¿A cuál sección desea entrar?</string>
     <string name="new_user">Nuevo Usuario</string>
 
+    <string name="user_edit">Editar usuario</string>
+
 
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
@@ -40,6 +42,7 @@
     <!-- Fa icons -->
     <string name="fa_chevron">&#xf053;</string>
     <string name="fa_user_users">&#xf007; Usuarios</string>
+    <string name="fa_user_users_edit">&#xf007; Editar usuario</string>
     <string name="fa_user_user">&#xf007; Usuario</string>
     <string name="fa_list_pages">&#xf03a; Páginas</string>
     <string name="fa_plus_new_admin">&#xf067; Nuevo</string>

@@ -1,9 +1,11 @@
 package rubixware.com.mobilepoint;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import java.util.ArrayList;
@@ -34,6 +36,15 @@ public class PanelUsers  extends Activity{
         Button goBack = (Button) findViewById(R.id.go_back);
         create_user_button.setTypeface(font);
         goBack.setTypeface(font);
+    }
+
+    public void createUser(View view){
+        startActivity(new Intent(PanelUsers.this, UserFormPage.class));
+    }
+
+    public void goBack(View view){
+        startActivity(new Intent(PanelUsers.this, LoginOption.class));
+        finish();
     }
 
 }

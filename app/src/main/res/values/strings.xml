@@ -18,6 +18,7 @@
     <string name="userAdmin">Introduzca su contraseña </string>
     <string name="login">Login</string>
     <string name="save_admin">Guardar Administrador</string>
+    <string name="save_user">Guardar Usuario</string>
     <string name="username">Username</string>
     <string name="account_type">¿Qué cuenta tienes?</string>
     <string name="user">Usuario</string>
@@ -29,6 +30,7 @@
     <string name="users">Usuarios</string>
     <string name="users_administration">Administración de Usuarios</string>
     <string name="which_admin_section">¿A cuál sección desea entrar?</string>
+    <string name="new_user">Nuevo Usuario</string>
 
 
     <string name="drawer_open">Open navigation drawer</string>

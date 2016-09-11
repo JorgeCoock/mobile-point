@@ -26,7 +26,7 @@ public class UserQueries {
     }
 
     public User showUser(String username, DataBaseHelper dbHelper){
-        String query = "SELECT * FROM " + TABLE_USERS + " WHERE " + COLUMN_USERS_USERNAME + " =  \"" +username+ "\"";
+        String query = "Select * FROM " + TABLE_USERS + " WHERE " + COLUMN_USERS_USERNAME + " =  \"" + username + "\"";
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
         User user = new User();

@@ -40,6 +40,15 @@ public class DataBaseHelper extends SQLiteOpenHelper{
             + COLUMN_USERS_USERNAME + " TEXT, " + COLUMN_USERS_PASSWORD + " TEXT, "
             + COLUMN_USERS_AGE + " INTEGER, UNIQUE ("+COLUMN_USERS_USERNAME+"))";
 
+    //Page fields
+    public static final String TABLE_PAGES = "pages";
+    public static final String COLUMN_PAGES_ID = "id";
+    public static final String COLUMN_PAGES_USER_ID = "user_id";
+    public static final String COLUMN_PAGES_URL = "url";
+    public static final String CREATE_PAGE_TABLE = "CREATE TABLE "
+            + TABLE_PAGES + "(" + COLUMN_PAGES_ID + " INTEGER PRIMARY KEY, "
+            + COLUMN_PAGES_USER_ID + " INTEGER, " + COLUMN_PAGES_URL + " TEXT)";
+
 
     public DataBaseHelper(Context context, String name, CursorFactory factory, int version){
         super(context, DATABASE_NAME, factory, DATABASE_VERSION);
@@ -51,6 +60,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase db){
         db.execSQL(CREATE_ADMIN_TABLE);
         db.execSQL(CREATE_USER_TABLE);
+        db.execSQL(CREATE_PAGE_TABLE);
     }
 
     @Override

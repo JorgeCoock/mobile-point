@@ -73,7 +73,47 @@
             android:textColor="#bbbbbb"
             android:textAllCaps="false"
             android:background="#303030"
+            android:layout_below="@+id/ageOption"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp" />
+
+        <RadioGroup
+            android:id="@+id/ageOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
             android:layout_below="@+id/password_confirmation"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true">
+
+            <RadioButton
+                android:id="@+id/kidButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/kid"
+                android:textColor="#bbbbbb"
+                android:textColorHighlight="#bbbbbb"
+                android:textColorHint="#bbbbbb"
+                android:textColorLink="#bbbbbb"
+                android:checked="true"
+                android:buttonTint="#bbbbbb" />
+
+            <RadioButton
+                android:id="@+id/teenagerButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/teenager"
+                android:textColor="#bbbbbb"
+                android:buttonTint="#bbbbbb" />
+
+            <RadioButton
+                android:id="@+id/adultButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/adult"
+                android:textColor="#bbbbbb"
+                android:buttonTint="#bbbbbb" />
+        </RadioGroup>
+
     </RelativeLayout>
 </LinearLayout>

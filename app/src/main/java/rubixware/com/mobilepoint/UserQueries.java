@@ -51,6 +51,7 @@ public class UserQueries {
         ContentValues values = new ContentValues();
         values.put(COLUMN_USERS_USERNAME, newUser.getUsername());
         values.put(COLUMN_USERS_PASSWORD, newUser.getPassword());
+        values.put(COLUMN_USERS_AGE, newUser.getAge());
         if (cursor.moveToFirst()){
             user.setId(Integer.parseInt(cursor.getString(0)));
             db.update(TABLE_USERS, values, COLUMN_USERS_ID + "=" + user.getId(), null);

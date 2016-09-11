@@ -32,6 +32,9 @@
     <string name="which_admin_section">¿A cuál sección desea entrar?</string>
     <string name="new_user">Nuevo Usuario</string>
 
+    <string name="adult">Adulto</string>
+    <string name="kid">Niño</string>
+    <string name="teenager">Adolescente</string>
     <string name="user_edit">Editar usuario</string>
 
 

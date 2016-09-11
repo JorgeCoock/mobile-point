@@ -95,6 +95,7 @@
                 android:textColorHighlight="#bbbbbb"
                 android:textColorHint="#bbbbbb"
                 android:textColorLink="#bbbbbb"
+                android:checked="true"
                 android:buttonTint="#bbbbbb" />
 
             <RadioButton

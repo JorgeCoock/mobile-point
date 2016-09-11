@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class UserFormPage extends Activity{
@@ -38,6 +40,11 @@ public class UserFormPage extends Activity{
         return checkPasswordField.getText().toString();
     }
 
+    private String ageOptionField(){
+        final RadioGroup ageOption = (RadioGroup) findViewById(R.id.ageOption);
+        return ((RadioButton) findViewById(ageOption.getCheckedRadioButtonId())).getText().toString();
+    }
+
     public void saveUser(View view){
         formValidations(usernameField(), passwordField(), passwordConfirmationField());
     }
@@ -47,19 +54,20 @@ public class UserFormPage extends Activity{
             Toast.makeText(this, "Llene todos los campos", Toast.LENGTH_SHORT).show();
         }else{
             if (password.equals(passwordConfirmation)){
-                tryUserCreate(username, password);
+                tryUserCreate(username, password, ageOptionField());
             }else{
                 Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
             }
         }
     }
 
-    private void tryUserCreate(String username, String password){
+    private void tryUserCreate(String username, String password, String userAge){
         DataBaseHelper dbHelper = new DataBaseHelper(this, null, null, 1);
         UserQueries userQueries = new UserQueries();
         User user = userQueries.showUser(username, dbHelper);
         if(user == null){
-            User newUser = new User(username, password);
+            int age = createUserAge(userAge);
+            User newUser = new User(username, password, age);
             userQueries.createUser(newUser, dbHelper);
             Toast.makeText(this, "Administrador creado!", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(UserFormPage.this, PanelUsers.class));
@@ -70,6 +78,17 @@ public class UserFormPage extends Activity{
 
     }
 
+    private int createUserAge(String age){
+        int userAge;
+        if (age.equals("Niño")){
+            userAge = 1;
+        }else if(age.equals("Adolescente")){
+            userAge = 2;
+        }else{
+            userAge = 3;
+        }
+        return userAge;
+    }
 
 
 

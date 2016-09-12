@@ -15,7 +15,7 @@ public class PageQueries {
 
     public PageQueries(){}
 
-    public void createUser(Page page, DataBaseHelper dbHelper){
+    public void createPage(Page page, DataBaseHelper dbHelper){
         ContentValues values = new ContentValues();
         values.put(COLUMN_PAGES_USER_ID, page.getUser_id());
         values.put(COLUMN_PAGES_URL, page.getUrl());

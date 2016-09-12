@@ -76,6 +76,12 @@ public class PanelUsersOption extends Activity{
         userDelete.show();
     }
 
+    public void startPagesOption(View view){
+        Intent intent = new Intent(PanelUsersOption.this, PagesOption.class);
+        intent.putExtra("username", username);
+        startActivity(intent);
+    }
+
     private void userDelete(String username){
         if (userQueries.deleteUser(username, dbHelper)){
             Toast.makeText(this, "Se eliminó al usuario", Toast.LENGTH_LONG).show();
@@ -84,6 +90,12 @@ public class PanelUsersOption extends Activity{
         }else{
             Toast.makeText(this, "No se pudo eliminar al usuario", Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void goBack(View view){
+        Intent intent = new Intent(PanelUsersOption.this, PanelUsers.class);
+        startActivity(intent);
+        finish();
     }
 
 }

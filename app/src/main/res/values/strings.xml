@@ -49,6 +49,7 @@
     <string name="fa_user_user">&#xf007; Usuario</string>
     <string name="fa_list_pages">&#xf03a; Páginas</string>
     <string name="fa_plus_new_admin">&#xf067; Nuevo</string>
+    <string name="fa_recommended_pages">&#xf00b; Páginas recomendadas</string>
     <string name="fa_remove_user">&#xf00d; Borrar usuario</string>
     <string name="fa_user_secret_admins">&#xf21b; Administradores</string>
     <string name="fa_user_secret_admin">&#xf21b; Administrador</string>

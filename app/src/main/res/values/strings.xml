@@ -34,6 +34,8 @@
 
     <string name="adult">Adulto</string>
     <string name="kid">Niño</string>
+    <string name="saved_pages">Páginas guardadas</string>
+    <string name="save">Guardar</string>
     <string name="teenager">Adolescente</string>
     <string name="user_edit">Editar usuario</string>
 

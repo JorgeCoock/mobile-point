@@ -1,17 +1,27 @@
 package rubixware.com.mobilepoint;
 
 import android.app.Activity;
+import rubixware.com.mobilepoint.SwipeListViewTouchListener;
 
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class ListPage extends Activity {
@@ -65,7 +75,7 @@ public class ListPage extends Activity {
 
 
     private String direction(){
-        directionFiled = (EditText) findViewById(R.id.url);
+        directionFiled = (EditText) findViewById(R.id.direction);
         String direction = directionFiled.getText().toString();
         return direction.replace(String.valueOf((char) 32), "");
     }

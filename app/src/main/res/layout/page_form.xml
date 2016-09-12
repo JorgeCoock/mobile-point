@@ -40,15 +40,15 @@
             android:gravity="center"
             android:text="@string/http"
             android:textSize="15dp"
-            android:layout_alignBottom="@+id/url"
+            android:layout_alignBottom="@+id/direction"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignTop="@+id/url"
+            android:layout_alignTop="@+id/direction"
             android:id="@+id/textView"
             android:textColor="#bbbbbb" />
 
         <EditText
-            android:id="@+id/url"
+            android:id="@+id/direction"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"

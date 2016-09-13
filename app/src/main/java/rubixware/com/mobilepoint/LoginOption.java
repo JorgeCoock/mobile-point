@@ -28,7 +28,7 @@ public class LoginOption extends Activity{
     }
 
     public void goToUserLogin(View button){
-        Toast.makeText(this, "Go to user!", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(LoginOption.this, UserLogin.class));
     }
 
     public void gotToAdminLogin(View button){
@@ -40,5 +40,13 @@ public class LoginOption extends Activity{
         Button adminLogin = (Button) findViewById(R.id.adminLogin);
         userLogin.setTypeface(font);
         adminLogin.setTypeface(font);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }

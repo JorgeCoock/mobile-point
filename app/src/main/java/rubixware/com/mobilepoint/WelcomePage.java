@@ -13,13 +13,13 @@ import java.util.TimerTask;
 
 public class WelcomePage extends Activity {
 
+    DataBaseHelper mDatabaseHelper = new DataBaseHelper(this, null, null, 1);
+    AdminQueries adminQueries = new AdminQueries();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.welcome_page);
-
-        DataBaseHelper mDatabaseHelper = new DataBaseHelper(this, null, null, 1);
-        AdminQueries adminQueries = new AdminQueries();
         ArrayList<Admin> admin_list =  adminQueries.getAdminIndex(mDatabaseHelper);
         launchNextActivity(admin_list.isEmpty());
     }
@@ -34,17 +34,26 @@ public class WelcomePage extends Activity {
         new Timer().schedule(new TimerTask() {
             @Override
             public void run() {
-                if (option){
+                if (option) {
                     Intent intent = new Intent(WelcomePage.this, AdminFormPage.class);
                     intent.putExtra("where", "WelcomePage");
                     startActivity(intent);
-                }else{
+                } else {
                     startActivity(new Intent(WelcomePage.this, LoginOption.class));
                 }
+                finish();
             }
         }, 2000);
 
     }
+
+    @Override
+    protected void onResume(){
+        ArrayList<Admin> admin_list =  adminQueries.getAdminIndex(mDatabaseHelper);
+        launchNextActivity(admin_list.isEmpty());
+        super.onResume();
+    }
+
 
 
 }

@@ -113,8 +113,15 @@
             >
         </activity>
 
+
         <activity
             android:name=".UserLogin"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            >
+        </activity>
+
+        <activity
+            android:name=".PageForm"
             android:configChanges="orientation|keyboardHidden|screenSize"
             >
         </activity>

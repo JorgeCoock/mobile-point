@@ -52,11 +52,11 @@
             android:layout_centerHorizontal="true" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/user_login"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/login"
-            android:onClick="adminLogin"
+            android:onClick="userLogin"
             android:textAllCaps="false"
             android:textColor="#bbbbbb"
             android:background="#303030"

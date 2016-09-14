@@ -126,6 +126,13 @@
             >
         </activity>
 
+        <activity
+            android:name=".PagesOption"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            >
+        </activity>
+
+
 
 
 

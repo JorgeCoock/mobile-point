@@ -4,6 +4,6 @@
     tools:context=".PointPage">
 
     <item android:id="@+id/userLogin"
-        android:title="@string/userLogin"
+        android:title="@string/end_session"
         app:showAsAction="ifRoom|withText" />
 </menu>

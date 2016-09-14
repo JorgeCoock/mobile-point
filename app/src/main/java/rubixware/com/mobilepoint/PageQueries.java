@@ -18,7 +18,8 @@ public class PageQueries {
     public void createPage(Page page, DataBaseHelper dbHelper){
         ContentValues values = new ContentValues();
         values.put(COLUMN_PAGES_USER_ID, page.getUser_id());
-        values.put(COLUMN_PAGES_URL, page.getUrl());
+        String url = "http://"+page.getUrl();
+        values.put(COLUMN_PAGES_URL, url);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         db.insert(TABLE_PAGES, null, values);
         db.close();

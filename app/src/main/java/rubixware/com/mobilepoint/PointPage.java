@@ -46,12 +46,22 @@ public class PointPage extends ActionBarActivity {
     private ValueCallback<Uri[]> mFilePathCallback;
     private static final int INPUT_FILE_REQUEST_CODE = 1;
     private static final String EXTRA_FROM_NOTIFICATION = "EXTRA_FROM_NOTIFICATION";
+    Intent intent;
+    private String username;
+    User user;
+    DataBaseHelper dbHelper = new DataBaseHelper(this, null, null, 1);
+    PageQueries pageQueries = new PageQueries();
+    UserQueries userQueries = new UserQueries();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //Metodos normales para el layout
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_page);
+
+        intent = getIntent();
+        username = intent.getStringExtra("username");
+        user = userQueries.showUser(username, dbHelper);
 
 
         //Creamos objeto storage para usar el internal storage
@@ -72,9 +82,10 @@ public class PointPage extends ActionBarActivity {
 
         mWebView.setWebChromeClient(new WebChromeClient() {
             @Override
-            public void onReceivedTitle(WebView view, String title){
+            public void onReceivedTitle(WebView view, String title) {
                 getWindow().setTitle(title);
             }
+
             public boolean onShowFileChooser(WebView webView, ValueCallback<Uri[]> filePathCallback,
                                              WebChromeClient.FileChooserParams fileChooserParams) {
                 if (mFilePathCallback != null) {
@@ -120,12 +131,9 @@ public class PointPage extends ActionBarActivity {
             }
 
         });
-        //Con esto abrimos una pagina, en este caso vacía por ser la primera
-        if (checkBlankFile()) {
-            mWebView.loadUrl(readDirections.get(0));
-        } else {
-            mWebView.loadUrl("");
-        }
+
+        //asignamos la primera dirección
+        mWebView.loadUrl(getUserPages().get(0));
 
         //Hacemos que nuestro webview sea parte de la clase HelloWebViewClient
 
@@ -237,8 +245,9 @@ public class PointPage extends ActionBarActivity {
 
     //Metodo para cambiar de layout y actividad
     public void changeLayout() {
-        Intent intent = new Intent(this, AdminLogin.class);
+        Intent intent = new Intent(this, LoginOption.class);
         startActivity(intent);
+        finish();
     }
 
 
@@ -246,7 +255,7 @@ public class PointPage extends ActionBarActivity {
     private void addDrawerItems() {
 
         //Llenamos el adaptador con el arrraylist correspondiente
-        mAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, readDirections);
+        mAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, getUserPages());
 
         //Le asignamos el adaptador al listview
         mDrawerList.setAdapter(mAdapter);
@@ -328,6 +337,15 @@ public class PointPage extends ActionBarActivity {
         mFilePathCallback.onReceiveValue(results);
         mFilePathCallback = null;
         return;
+    }
+
+    private ArrayList<String> getUserPages(){
+        ArrayList<Page> pagesCollection = pageQueries.getUserPages(user.getId(), dbHelper);
+        ArrayList<String> pagesArray = new ArrayList<>();
+        for (int i =0; i < pagesCollection  .size(); i++){
+            pagesArray.add(pagesCollection.get(i).getUrl());
+        }
+        return pagesArray;
     }
 
     }

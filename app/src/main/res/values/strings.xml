@@ -41,6 +41,7 @@
     <string name="user_login">Login de Usuario</string>
 
 
+    <string name="end_session">Cerrar sesión</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     <string name="userLogin"> User Login</string>

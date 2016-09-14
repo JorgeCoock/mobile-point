@@ -82,9 +82,10 @@ public class PointPage extends ActionBarActivity {
 
         mWebView.setWebChromeClient(new WebChromeClient() {
             @Override
-            public void onReceivedTitle(WebView view, String title){
+            public void onReceivedTitle(WebView view, String title) {
                 getWindow().setTitle(title);
             }
+
             public boolean onShowFileChooser(WebView webView, ValueCallback<Uri[]> filePathCallback,
                                              WebChromeClient.FileChooserParams fileChooserParams) {
                 if (mFilePathCallback != null) {
@@ -132,7 +133,7 @@ public class PointPage extends ActionBarActivity {
         });
 
         //asignamos la primera dirección
-        mWebView.loadUrl("www.google.com");
+        mWebView.loadUrl(getUserPages().get(0));
 
         //Hacemos que nuestro webview sea parte de la clase HelloWebViewClient
 
@@ -244,8 +245,9 @@ public class PointPage extends ActionBarActivity {
 
     //Metodo para cambiar de layout y actividad
     public void changeLayout() {
-        Intent intent = new Intent(this, AdminLogin.class);
+        Intent intent = new Intent(this, LoginOption.class);
         startActivity(intent);
+        finish();
     }
 
 

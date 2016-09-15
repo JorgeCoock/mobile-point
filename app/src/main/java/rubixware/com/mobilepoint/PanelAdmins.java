@@ -102,12 +102,17 @@ public class PanelAdmins extends Activity {
     }
 
     private void deleteAdmin(String adminUsername, Integer position){
-        if(adminQueries.deleteAdmin(adminUsername, dbHelper)){
-            Toast.makeText(this, "Se ha eliminado al admin: "+adminUsername, Toast.LENGTH_LONG).show();
-            adminAdapter.remove(adminAdapter.getItem(position));
-            adminAdapter.notifyDataSetChanged();
-        }else{
-            Toast.makeText(this, "NO se pudo eliminar al admin", Toast.LENGTH_LONG).show();
+        if (adminQueries.getAdminUsernames(dbHelper).isEmpty()){
+            Toast.makeText(this, "No puedes eliminar a todos los admins!", Toast.LENGTH_LONG).show();
+
+        }else {
+            if (adminQueries.deleteAdmin(adminUsername, dbHelper)) {
+                Toast.makeText(this, "Se ha eliminado al admin: " + adminUsername, Toast.LENGTH_LONG).show();
+                adminAdapter.remove(adminAdapter.getItem(position));
+                adminAdapter.notifyDataSetChanged();
+            } else {
+                Toast.makeText(this, "NO se pudo eliminar al admin", Toast.LENGTH_LONG).show();
+            }
         }
     }
 

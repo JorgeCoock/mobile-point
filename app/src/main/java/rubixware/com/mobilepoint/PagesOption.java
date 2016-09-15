@@ -55,7 +55,12 @@ public class PagesOption extends Activity{
         Intent intent = new Intent(PagesOption.this, PageForm.class);
         intent.putExtra("username", username);
         startActivity(intent);
-        finish();
+    }
+
+    public void openRecommendedPages(View view){
+        Intent intent = new Intent(PagesOption.this, RecommendedPagesForm.class);
+        intent.putExtra("username", username);
+        startActivity(intent);
     }
 
 }

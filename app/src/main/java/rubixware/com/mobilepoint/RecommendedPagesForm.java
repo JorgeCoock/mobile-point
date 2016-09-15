@@ -5,7 +5,12 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 
 public class RecommendedPagesForm extends Activity {
@@ -17,6 +22,8 @@ public class RecommendedPagesForm extends Activity {
     String textViewTitle;
     DataBaseHelper dbHelper = new DataBaseHelper(this, null, null, 1);
     UserQueries userQueries = new UserQueries();
+    RecommendedPageQueries recommendedPageQueries = new RecommendedPageQueries();
+    public ArrayAdapter<String> pagesAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +34,7 @@ public class RecommendedPagesForm extends Activity {
         user = userQueries.showUser(username, dbHelper);
         title = (TextView) findViewById(R.id.title);
         title.setText(title(user));
+        setPagesOnListView();
 
     }
 
@@ -45,6 +53,12 @@ public class RecommendedPagesForm extends Activity {
             ageOption = "adultos";
         }
         return "Páginas para "+ageOption;
+    }
+
+    private void setPagesOnListView(){
+        pagesAdapter = new ArrayAdapter<String>(this, R.layout.custom_listview, android.R.id.text1, recommendedPageQueries.getRecommendedPagesUrls(user.getAge(), dbHelper));
+        final ListView listView = (ListView) findViewById(R.id.listview);
+        listView.setAdapter(pagesAdapter);
     }
 
 

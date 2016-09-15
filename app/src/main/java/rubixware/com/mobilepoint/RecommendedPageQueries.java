@@ -22,13 +22,14 @@ public class RecommendedPageQueries {
         values.put(COLUMN_RECOMMENDED_PAGES_AGE, recommendedPage.getAge());
         SQLiteDatabase db = dataBaseHelper.getWritableDatabase();
         db.insert(TABLE_RECOMMENDED_PAGES, null, values);
+        db.close();
     }
 
     public ArrayList<String> getRecommendedPagesUrls(int age, DataBaseHelper dbHelper){
         ArrayList<String> pages = new ArrayList<>();
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         try{
-            String query = "Select url FROM "+TABLE_RECOMMENDED_PAGES+" WHERE "+COLUMN_RECOMMENDED_PAGES_AGE + " =  \""
+            String query = "Select url FROM recommended_pages WHERE age =  \""
                     + age + "\" ORDER BY url";
             Cursor cursor = db.rawQuery(query,null);
             try{
@@ -45,6 +46,7 @@ public class RecommendedPageQueries {
         }
         return pages;
     }
+
 
 
 }

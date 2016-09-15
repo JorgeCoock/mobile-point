@@ -56,7 +56,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     public static final String COLUMN_RECOMMENDED_PAGES_AGE = "age";
     public static final String CREATE_RECOMMENDED_PAGES_TABLE = "CREATE TABLE "
             + TABLE_RECOMMENDED_PAGES + "(" + COLUMN_RECOMMENDED_PAGES_ID + " INTEGER PRIMARY KEY, "
-            + COLUMN_RECOMMENDED_PAGES_URL + " TEXT, " + COLUMN_RECOMMENDED_PAGES_AGE + " INTEGER";
+            + COLUMN_RECOMMENDED_PAGES_URL + " TEXT, " + COLUMN_RECOMMENDED_PAGES_AGE + " INTEGER)";
 
 
 

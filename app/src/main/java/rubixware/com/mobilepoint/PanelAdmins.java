@@ -102,7 +102,8 @@ public class PanelAdmins extends Activity {
     }
 
     private void deleteAdmin(String adminUsername, Integer position){
-        if (adminQueries.getAdminUsernames(dbHelper).isEmpty()){
+        int adminCount = adminQueries.getAdminUsernames(dbHelper).size();
+        if (adminCount == 1){
             Toast.makeText(this, "No puedes eliminar a todos los admins!", Toast.LENGTH_LONG).show();
 
         }else {

@@ -72,6 +72,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         db.execSQL(CREATE_USER_TABLE);
         db.execSQL(CREATE_PAGE_TABLE);
         db.execSQL(CREATE_RECOMMENDED_PAGES_TABLE);
+        
     }
 
     @Override

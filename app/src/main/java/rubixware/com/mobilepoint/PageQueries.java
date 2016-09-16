@@ -15,11 +15,16 @@ public class PageQueries {
 
     public PageQueries(){}
 
-    public void createPage(Page page, DataBaseHelper dbHelper){
+    public void createPage(Page page, DataBaseHelper dbHelper, boolean option){
         ContentValues values = new ContentValues();
         values.put(COLUMN_PAGES_USER_ID, page.getUser_id());
-        String url = "http://"+page.getUrl();
-        values.put(COLUMN_PAGES_URL, url);
+        if (option){
+            String url = page.getUrl();
+            values.put(COLUMN_PAGES_URL, url);
+        }else{
+            String url = "http://"+page.getUrl();
+            values.put(COLUMN_PAGES_URL, url);
+        }
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         db.insert(TABLE_PAGES, null, values);
         db.close();

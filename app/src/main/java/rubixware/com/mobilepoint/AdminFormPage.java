@@ -107,17 +107,17 @@ public class AdminFormPage extends Activity{
         RecommendedPage recommendedPage10 = new RecommendedPage("http://www.dblatino.com/", 1);
         array.add(recommendedPage10);
 
-        RecommendedPage recommendedPage11 = new RecommendedPage("https://www.es.wikipedia.org/", 2);
+        RecommendedPage recommendedPage11 = new RecommendedPage("http://www.es.wikipedia.org/", 2);
         array.add(recommendedPage11);
-        RecommendedPage recommendedPage12 = new RecommendedPage("https://www.twitter.com/?lang=es", 2);
+        RecommendedPage recommendedPage12 = new RecommendedPage("http://www.twitter.com/?lang=es", 2);
         array.add(recommendedPage12);
-        RecommendedPage recommendedPage13 = new RecommendedPage("https://www.easports.com/mx/fifa", 2);
+        RecommendedPage recommendedPage13 = new RecommendedPage("http://www.easports.com/mx/fifa", 2);
         array.add(recommendedPage13);
-        RecommendedPage recommendedPage14 = new RecommendedPage("https://www.xbox.com/es-MX/xbox-one", 2);
+        RecommendedPage recommendedPage14 = new RecommendedPage("http://www.xbox.com/es-MX/xbox-one", 2);
         array.add(recommendedPage14);
-        RecommendedPage recommendedPage15 = new RecommendedPage("https://www.gamers.vg/tag/tienda-en-linea/", 2);
+        RecommendedPage recommendedPage15 = new RecommendedPage("http://www.gamers.vg/tag/tienda-en-linea/", 2);
         array.add(recommendedPage15);
-        RecommendedPage recommendedPage16 = new RecommendedPage("https://www.youtube.com/", 2);
+        RecommendedPage recommendedPage16 = new RecommendedPage("http://www.youtube.com/", 2);
         array.add(recommendedPage16);
         RecommendedPage recommendedPage17 = new RecommendedPage("http://www.facebook.com ", 2);
         array.add(recommendedPage17);

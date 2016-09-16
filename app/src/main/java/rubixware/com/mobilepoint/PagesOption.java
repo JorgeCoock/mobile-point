@@ -6,9 +6,12 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class PagesOption extends Activity{
 
@@ -55,7 +58,12 @@ public class PagesOption extends Activity{
         Intent intent = new Intent(PagesOption.this, PageForm.class);
         intent.putExtra("username", username);
         startActivity(intent);
-        finish();
+    }
+
+    public void openRecommendedPages(View view){
+        Intent intent = new Intent(PagesOption.this, RecommendedPagesForm.class);
+        intent.putExtra("username", username);
+        startActivity(intent);
     }
 
 }

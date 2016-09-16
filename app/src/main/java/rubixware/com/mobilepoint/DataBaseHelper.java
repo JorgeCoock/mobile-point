@@ -49,6 +49,16 @@ public class DataBaseHelper extends SQLiteOpenHelper{
             + TABLE_PAGES + "(" + COLUMN_PAGES_ID + " INTEGER PRIMARY KEY, "
             + COLUMN_PAGES_USER_ID + " INTEGER, " + COLUMN_PAGES_URL + " TEXT)";
 
+    //Recommended Page fields
+    public static final String TABLE_RECOMMENDED_PAGES = "recommended_pages";
+    public static final String COLUMN_RECOMMENDED_PAGES_ID = "id";
+    public static final String COLUMN_RECOMMENDED_PAGES_URL = "url";
+    public static final String COLUMN_RECOMMENDED_PAGES_AGE = "age";
+    public static final String CREATE_RECOMMENDED_PAGES_TABLE = "CREATE TABLE "
+            + TABLE_RECOMMENDED_PAGES + "(" + COLUMN_RECOMMENDED_PAGES_ID + " INTEGER PRIMARY KEY, "
+            + COLUMN_RECOMMENDED_PAGES_URL + " TEXT, " + COLUMN_RECOMMENDED_PAGES_AGE + " INTEGER)";
+
+
 
     public DataBaseHelper(Context context, String name, CursorFactory factory, int version){
         super(context, DATABASE_NAME, factory, DATABASE_VERSION);
@@ -61,6 +71,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         db.execSQL(CREATE_ADMIN_TABLE);
         db.execSQL(CREATE_USER_TABLE);
         db.execSQL(CREATE_PAGE_TABLE);
+        db.execSQL(CREATE_RECOMMENDED_PAGES_TABLE);
+
     }
 
     @Override

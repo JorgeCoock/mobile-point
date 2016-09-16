@@ -72,7 +72,7 @@ public class PageForm  extends Activity{
             Page checkPage = pageQueries.showPage(getUrlTextField(), user.getId(), dbHelper);
             if (checkPage == null){
                 Page newPage = new Page(user.getId(), getUrlTextField());
-                pageQueries.createPage(newPage, dbHelper);
+                pageQueries.createPage(newPage, dbHelper, false);
                 Toast.makeText(this, "Página guardada!", Toast.LENGTH_SHORT).show();
                 setPagesOnListview(getUserPages());
             }else{

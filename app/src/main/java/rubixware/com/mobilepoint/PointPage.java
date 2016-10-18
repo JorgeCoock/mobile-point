@@ -133,7 +133,9 @@ public class PointPage extends ActionBarActivity {
         });
 
         //asignamos la primera dirección
-        mWebView.loadUrl(getUserPages().get(0));
+        if(!(getUserPages().isEmpty())){
+            mWebView.loadUrl(getUserPages().get(0));
+        }
 
         //Hacemos que nuestro webview sea parte de la clase HelloWebViewClient
 

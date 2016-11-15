@@ -71,7 +71,7 @@ public class UserFormPage extends Activity{
             userQueries.createUser(newUser, dbHelper);
             Toast.makeText(this, "Administrador creado!", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(UserFormPage.this, PanelUsers.class));
-
+            finish();
         }else{
             Toast.makeText(this, "Ya existe un usuario con ese nombre", Toast.LENGTH_LONG).show();
         }
